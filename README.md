@@ -1,3 +1,5 @@
+![Just a cool image](https://hc-cdn.hel1.your-objectstorage.com/s/v3/c21430974052d1942ffe21b017bf151f11f20270_image.png)
+
 # Siege Profile Pic Maker
 
 _I noticed that there wasn't a profile picture maker for #siege, so I built one! Just upload your picture, adjust a few settings, and download your new profile picture to use anywhere you like._
@@ -7,6 +9,7 @@ _I noticed that there wasn't a profile picture maker for #siege, so I built one!
 - **Toggleable Compinents**: _You can toggle on and off specific things like the logo, castle, meeple._
 - **Adjustable Effect**: _You can adjust the sepia like effect's strength using a slider_
 - **Real-time preview**: _You'll get a realtime preview of what you're doing..._
+- **Responsive**: _Yeah! your phone screen can handle this..._
 
 ## 📚 Usage
 

@@ -26,56 +26,58 @@ function App() {
           src="./header.png"
           className="sm:block absolute top-10 sm:top-15 mt-3 sm:w-[200px] w-[150px]"
         />
-        <div className="flex flex-col items-center gap-5 p-10 sm:overflow-hidden overflow-scroll z-100 bg-[#AD8961] border-3 border-b-0 border-[#624A37] w-[90%] h-fit min-h-full sm:mt-50 mt-0">
-          <div className="flex w-full gap-5 sm:flex-row flex-col">
-            <Toggle
-              value={ctx.castleEnabled}
-              setValue={() => {
-                setCtx((prev: any) => ({
-                  ...prev,
-                  castleEnabled: !prev.castleEnabled,
+        <div className="w-[95%] h-fit min-h-full sm:mt-50 mt-0 p-5 bg-[rgba(173,137,97,0.5)]  border-3 border-b-0 border-[#624A37]">
+          <div className="w-full h-full flex flex-col items-center gap-5 p-10 sm:overflow-hidden overflow-scroll z-100 border-3 border-b-0 border-[#7E664E] border-dashed ">
+            <div className="flex w-full gap-5 sm:flex-row flex-col">
+              <Toggle
+                value={ctx.castleEnabled}
+                setValue={() => {
+                  setCtx((prev: any) => ({
+                    ...prev,
+                    castleEnabled: !prev.castleEnabled,
+                  }));
+                }}
+                icon={<Castle size={35} />}
+                text="Castle"
+              />
+              <Toggle
+                value={ctx.logoEnabled}
+                setValue={() => {
+                  setCtx((prev: any) => ({
+                    ...prev,
+                    logoEnabled: !prev.logoEnabled,
+                  }));
+                }}
+                icon={<Signature size={35} />}
+                text="Logo"
+              />
+            </div>
+            <div className="w-full p-5 border-4 border-dashed border-[#8B6D4E] rounded-[3.25rem] flex sm:flex-row flex-col gap-5">
+              <Toggle
+                value={ctx.meepleEnabled}
+                setValue={() => {
+                  setCtx((prev: any) => ({
+                    ...prev,
+                    meepleEnabled: !prev.meepleEnabled,
+                  }));
+                }}
+                icon={<User size={35} />}
+                text="Meeple"
+              />
+              <MeepleSelector ctx={ctx} setCtx={setCtx} />
+            </div>
+            <Slider
+              minimum={0}
+              maximum={100}
+              value={ctx.strength}
+              onChangeFn={(e: any) => {
+                setCtx((p: any) => ({
+                  ...p,
+                  strength: parseInt(e.target.value),
                 }));
               }}
-              icon={<Castle size={35} />}
-              text="Castle"
-            />
-            <Toggle
-              value={ctx.logoEnabled}
-              setValue={() => {
-                setCtx((prev: any) => ({
-                  ...prev,
-                  logoEnabled: !prev.logoEnabled,
-                }));
-              }}
-              icon={<Signature size={35} />}
-              text="Logo"
             />
           </div>
-          <div className="w-full p-5 border-4 border-dashed border-[#8B6D4E] rounded-[3.25rem] flex sm:flex-row flex-col gap-5">
-            <Toggle
-              value={ctx.meepleEnabled}
-              setValue={() => {
-                setCtx((prev: any) => ({
-                  ...prev,
-                  meepleEnabled: !prev.meepleEnabled,
-                }));
-              }}
-              icon={<User size={35} />}
-              text="Meeple"
-            />
-            <MeepleSelector ctx={ctx} setCtx={setCtx} />
-          </div>
-          <Slider
-            minimum={0}
-            maximum={100}
-            value={ctx.strength}
-            onChangeFn={(e: any) => {
-              setCtx((p: any) => ({
-                ...p,
-                strength: parseInt(e.target.value),
-              }));
-            }}
-          />
         </div>
       </div>
     </div>
