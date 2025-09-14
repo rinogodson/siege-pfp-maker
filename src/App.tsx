@@ -3,6 +3,7 @@ import PreviewThing from "./Components/PreviewThing/PreviewThing";
 import Toggle from "./Components/Toggle/Toggle";
 import { Castle, Signature, User } from "lucide-react";
 import MeepleSelector from "./Components/MeepleSelector/MeepleSelector";
+import Slider from "./Components/Slider/Slider";
 
 function App() {
   const [ctx, setCtx] = React.useState({
@@ -11,18 +12,15 @@ function App() {
     selectedMeeple: 0,
     logoEnabled: true,
     castleEnabled: true,
+    strength: 80,
   });
-
-  const imgRef = React.useRef(null);
-
-  const [test, setTest] = React.useState(false);
 
   return (
     <div
       style={{ backgroundImage: "url(bg.jpg)" }}
       className="w-screen h-screen flex flex-col gap-10 grid-cols-[6fr_8fr] sm:grid place-items-center"
     >
-      <PreviewThing ctx={ctx} setCtx={setCtx} />
+      <PreviewThing ctx={ctx} />
       <div className="overflow-scroll items-center flex justify-between flex-col h-full sm:pt-20 pt-0 w-full">
         <img
           src="./header.png"
@@ -67,6 +65,17 @@ function App() {
             />
             <MeepleSelector ctx={ctx} setCtx={setCtx} />
           </div>
+          <Slider
+            minimum={0}
+            maximum={100}
+            value={ctx.strength}
+            onChangeFn={(e: any) => {
+              setCtx((p: any) => ({
+                ...p,
+                strength: parseInt(e.target.value),
+              }));
+            }}
+          />
         </div>
       </div>
     </div>
