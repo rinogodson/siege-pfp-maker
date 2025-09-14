@@ -139,7 +139,7 @@ function PreviewThing({ ctx }: { ctx: any }) {
 
   return (
     <div className="w-full h-full flex justify-start sm:pt-30 pt-0 gap-10 items-center flex-col">
-      <div className="z-100 sm:mt-0 mt-50 flex overflow-hidden justify-center items-center w-[70%] aspect-square bg-[#AD8961] border-3 border-[#624A37] rounded-[3em] md:rounded-[5em]">
+      <div className="z-100 sm:mt-0 mt-30 flex overflow-hidden justify-center items-center w-[70%] aspect-square bg-[#AD8961] border-3 border-[#624A37] rounded-[3em] md:rounded-[5em]">
         {image && <canvas className="w-full h-full" ref={canvasRef}></canvas>}
         <input
           style={{ display: "none" }}

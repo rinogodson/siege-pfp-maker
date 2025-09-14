@@ -24,9 +24,9 @@ function App() {
       <div className="overflow-scroll items-center flex justify-between flex-col h-full sm:pt-20 pt-0 w-full">
         <img
           src="./header.png"
-          className="sm:block absolute top-10 sm:top-15 mt-3 sm:w-[200px] w-[150px]"
+          className="sm:block absolute top-1 sm:top-15 mt-3 sm:w-[200px] w-[100px]"
         />
-        <div className="w-[95%] h-fit min-h-full sm:mt-50 mt-0 p-5 bg-[rgba(173,137,97,0.5)]  border-3 border-b-0 border-[#624A37]">
+        <div className="w-[95%] h-fit min-h-full sm:mt-50 mt-0 p-5 pb-0 bg-[rgba(173,137,97,0.5)]  border-3 border-b-0 border-[#624A37]">
           <div className="w-full h-full flex flex-col items-center gap-5 p-10 sm:overflow-hidden overflow-scroll z-100 border-3 border-b-0 border-[#7E664E] border-dashed ">
             <div className="flex w-full gap-5 sm:flex-row flex-col">
               <Toggle
