@@ -5,7 +5,14 @@ import { Castle, Signature, User } from "lucide-react";
 import MeepleSelector from "./Components/MeepleSelector/MeepleSelector";
 
 function App() {
-  const [ctx, setCtx] = React.useState({ imageUploaded: false });
+  const [ctx, setCtx] = React.useState({
+    imageUploaded: false,
+    meepleEnabled: true,
+    selectedMeeple: 0,
+    logoEnabled: true,
+    castleEnabled: true,
+  });
+
   const imgRef = React.useRef(null);
 
   const [test, setTest] = React.useState(false);
@@ -24,26 +31,41 @@ function App() {
         <div className="flex flex-col items-center gap-5 p-10 sm:overflow-hidden overflow-scroll z-100 bg-[#AD8961] border-3 border-b-0 border-[#624A37] w-[90%] h-fit min-h-full sm:mt-50 mt-0">
           <div className="flex w-full gap-5 sm:flex-row flex-col">
             <Toggle
-              value={test}
-              setValue={setTest}
+              value={ctx.castleEnabled}
+              setValue={() => {
+                setCtx((prev: any) => ({
+                  ...prev,
+                  castleEnabled: !prev.castleEnabled,
+                }));
+              }}
               icon={<Castle size={35} />}
               text="Castle"
             />
             <Toggle
-              value={test}
-              setValue={setTest}
+              value={ctx.logoEnabled}
+              setValue={() => {
+                setCtx((prev: any) => ({
+                  ...prev,
+                  logoEnabled: !prev.logoEnabled,
+                }));
+              }}
               icon={<Signature size={35} />}
               text="Logo"
             />
           </div>
-          <div className="w-full p-5 bg-[rgba(0,0,0,0.1)] rounded-[3.25rem] flex sm:flex-row flex-col gap-5">
+          <div className="w-full p-5 border-4 border-dashed border-[#8B6D4E] rounded-[3.25rem] flex sm:flex-row flex-col gap-5">
             <Toggle
-              value={test}
-              setValue={setTest}
+              value={ctx.meepleEnabled}
+              setValue={() => {
+                setCtx((prev: any) => ({
+                  ...prev,
+                  meepleEnabled: !prev.meepleEnabled,
+                }));
+              }}
               icon={<User size={35} />}
               text="Meeple"
             />
-            <MeepleSelector />
+            <MeepleSelector ctx={ctx} setCtx={setCtx} />
           </div>
         </div>
       </div>
