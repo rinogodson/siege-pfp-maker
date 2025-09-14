@@ -13,7 +13,7 @@ _I noticed that there wasn't a profile picture maker for #siege, so I built one!
 
 ## 📚 Usage
 
-Go to [this link](https://siege-pfp.netlify.app) and start using it.
+Go to [this link](https://siege-pfp.netlify.app) and start using it by uploading your current pfp.
 
 ## 🤝 Contributing
 
