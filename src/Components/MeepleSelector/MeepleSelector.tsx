@@ -32,7 +32,7 @@ function MeepleSelector({ setCtx, ctx }: any) {
         style={{ background: ctx.selectedMeeple == 2 ? "#AD8961" : "none" }}
         className="w-full h-full rounded-[1.5em] flex justify-center items-center transition-all duration-300"
       >
-        <img src="mees/mee_green.png" className="sm:w-10 w-7" />
+        <img src="mees/mee-purple.png" className="sm:w-10 w-7" />
       </div>
       <div
         onClick={() => {
@@ -41,7 +41,7 @@ function MeepleSelector({ setCtx, ctx }: any) {
         style={{ background: ctx.selectedMeeple == 3 ? "#AD8961" : "none" }}
         className="w-full h-full rounded-[1.5em] flex justify-center items-center transition-all duration-300"
       >
-        <img src="mees/mee-purple.png" className="sm:w-10 w-7" />
+        <img src="mees/mee_green.png" className="sm:w-10 w-7" />
       </div>
     </div>
   );
